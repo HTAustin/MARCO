@@ -61,9 +61,9 @@ int main(int argc, char **argv){
         string line;
         while (getline(infile, line))
         {
-            string delimiter = ">=";
-            string doc_name = line.substr(0, s.find(delimiter));
-            string content = line.substr(1, s.find(delimiter));
+            string delimiter = "\t";
+            string doc_name = line.substr(0, line.find(delimiter));
+            string content = line.substr(1, line.find(delimiter));
 
             num_docs++;
             vector<string> tokens = tokenizer.tokenize(content);
