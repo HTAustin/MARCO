@@ -63,9 +63,7 @@ int main(int argc, char **argv){
         {
             string delimiter = "\t";
             string doc_name = line.substr(0, line.find(delimiter));
-            string content = line.substr(1, line.find(delimiter));
-            cerr<<endl<<doc_name<<endl;
-            cerr<<endl<<content<<endl;
+            string content = line.substr(line.find(delimiter) + 1, line.length());
             num_docs++;
             vector<string> tokens = tokenizer.tokenize(content);
 
@@ -164,3 +162,4 @@ int main(int argc, char **argv){
 
 
 }
+
